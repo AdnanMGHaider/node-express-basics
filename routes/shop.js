@@ -1,9 +1,15 @@
+const path = require("path");
 const express = require("express");
 
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-  res.send("<h1>This is the home page</h1>");
+  res.sendFile(path.join(__dirname, "../", "views", "shop.html"));
 });
 
 module.exports = router;
+
+/*
+1)The res.sendFile method requires an absolute path and not a relative path.
+2)The __dirname variable will construct a path which points to the folder that contains the shop.js file, which is the routes folder, and then from there it will find its way to the shop.html file which is inside the views folder with the help of the path.join() method.
+*/
