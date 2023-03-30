@@ -5,8 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page Not Found</title>
+    <!--The css file linked here is served statically via the express.static() method in app.js-->
+    <!--The reason the path is not /public/css/main.css is because the express.static method you used in the app.js file sets the 'public' directory as the root directory for serving static assets. This means that when you request a file from the root directory (like /css/main.css), Express.js will look for that file inside the public folder.-->
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+          <li class="main-header__item"><a class="active" href="/">Shop</a></li>
+          <li class="main-header__item">
+            <a href="/admin/add-product">Add Product</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <h1>Page Not Found</h1>
   </body>
 </html>
