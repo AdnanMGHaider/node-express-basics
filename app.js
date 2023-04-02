@@ -8,7 +8,14 @@ const expressHbs = require("express-handlebars");
 const app = express();
 
 //Unlike pug, we need to tell engine that handlebars engine exists.
-app.engine("hbs", expressHbs());
+app.engine(
+  "hbs",
+  expressHbs({
+    layoutsDir: "views/layouts",
+    defaultLayout: "main-layout",
+    extname: "hbs",
+  })
+);
 app.set("view engine", "hbs");
 // app.set("view engine", "pug");
 app.set("views", "views");
