@@ -2,10 +2,15 @@
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
+//Unlike pug, we need to import the handlebars engine
+const expressHbs = require("express-handlebars");
 
 const app = express();
 
-app.set("view engine", "pug");
+//Unlike pug, we need to tell engine that handlebars engine exists.
+app.engine("hbs", expressHbs());
+app.set("view engine", "hbs");
+// app.set("view engine", "pug");
 app.set("views", "views");
 
 const adminData = require("./routes/admin");
