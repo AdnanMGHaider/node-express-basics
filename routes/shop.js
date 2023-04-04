@@ -1,7 +1,7 @@
-const path = require("path");
+// const path = require("path");
 const express = require("express");
 
-const rootDir = require("../util/path");
+// const rootDir = require("../util/path");
 const adminData = require("./admin");
 
 const router = express.Router();
@@ -14,9 +14,9 @@ router.get("/", (req, res, next) => {
     prods: products,
     pageTitle: "Shop",
     path: "/",
-    hasProducts: products.length > 0,
-    productCSS: true,
-    activeShop: true,
+    // hasProducts: products.length > 0,
+    // productCSS: true,
+    // activeShop: true,
   });
 });
 
